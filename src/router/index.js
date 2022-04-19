@@ -8,7 +8,7 @@ const router = createRouter({
       name: 'home',
       component: () => import('../views/HomeView.vue'),
       meta: {
-        title: `${import.meta.env.VITE_APP_TITLE}`
+        title: `${import.meta.env.VITE_APP_TITLE} | Frontend Developer`
       }
     },
     {
