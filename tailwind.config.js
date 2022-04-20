@@ -10,7 +10,8 @@ module.exports = {
         'poppins': ['Poppins', 'sans-serif']
       },
       colors: {
-        'gf-yellow': '#F3BD03'
+        'gf-yellow': '#F3BD03',
+        'gf-dark-yellow': '#C67600',
       }
     },
   },
