@@ -12,6 +12,9 @@ module.exports = {
       colors: {
         'gf-yellow': '#F3BD03',
         'gf-dark-yellow': '#C67600',
+      },
+      animation: {
+        'spin-slow': 'spin 100s linear infinite'
       }
     },
   },

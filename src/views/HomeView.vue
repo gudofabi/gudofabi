@@ -61,18 +61,24 @@
     </div>
 
     <div class="contact">
+      <img src="/images/full-moon.png" alt="">
       <div class="content">
-        <h3>Get in Touch.</h3>
+        <h3 class="text-center">Get in Touch.</h3>
         <p>Do you have questions or are you interested in working together, you can visit the links.</p>
         <ul>
-          <li>
+          <li class="mr-4">
             <a href="" target="_blank">
-              <fa :icon="['fab', 'facebook-square']" />
+              <fa :icon="['fab', 'behance-square']" />
+            </a>
+          </li>
+          <li class="mr-4">
+            <a href="" target="_blank">
+              <fa :icon="['fab', 'linkedin']" />
             </a>
           </li>
           <li>
             <a href="" target="_blank">
-              <fa :icon="['fab', 'linkedin']" />
+              <fa :icon="['fab', 'pinterest-square']" />
             </a>
           </li>
         </ul>
@@ -181,9 +187,25 @@ export default {
   }
 
   .contact {
-    .content {
-      h3 {
+    @apply pt-20 pb-16 relative overflow-hidden;
 
+    img {
+      @apply absolute max-w-[700px] w-full h-auto mr-[-350px] ml-[-350px] right-1/2 left-1/2 -z-10 top-0 animate-spin-slow;
+    }
+    .content {
+      @apply  mx-auto max-w-[522px] w-full text-center;
+
+      p {
+        @apply tracking-widest leading-normal mb-10;
+      }
+      
+      ul {
+        @apply flex items-center justify-center;
+
+        li  a svg{
+          @apply h-11 w-11 hover:text-gf-yellow transition-all;
+
+        }
       }
     }
   }
