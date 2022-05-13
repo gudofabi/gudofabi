@@ -16,11 +16,15 @@ import './assets/style/main.scss';
 
 import App from './App.vue'
 import router from './router'
+import VueGtag from "vue-gtag";
 
 const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
+app.use(VueGtag, {
+    config: { id: "UA-120785527-2" }
+})
 app.component('fa', FontAwesomeIcon)
 
 app.mount('#app')
