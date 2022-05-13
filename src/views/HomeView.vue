@@ -2,31 +2,34 @@
   <div class="home">
 
     <div class="header">
-      <div class="header-content">
-        <div class="yellow-brick"></div>
-        <div class="content">
-          <h1>Gudo fabi</h1>
-          <p>Frontend developer, teacher, and web junkie. I love creating new things, discovering designing trends, and  transforming ideas into reality.</p>
-          <img src="/images/astro-helmet-2.png" alt="" class="md:hidden">
+      <div class="header-container">
+        <div class="header-content">
+          <div class="yellow-brick"></div>
+          <div class="content">
+            <h1>Gudo fabi</h1>
+            <p>Frontend developer, teacher, and web junkie. I love creating new things, discovering designing trends, and  transforming ideas into reality.</p>
+            <img src="/images/astro-helmet-2.png" alt="" class="md:hidden">
+          </div>
+        </div>
+        <div class="header-img">
+          <img src="/images/astro-lg.png" alt="Header Astro">
+          <!-- <picture>
+            <source media="(min-width: 1024px)" srcset="/images/astro-lg.png">
+            <img src="/images/astro-md.png" alt="Header Astro">
+          </picture> -->
         </div>
       </div>
-      <div class="header-img">
-        <img src="/images/astro-lg.png" alt="Header Astro">
-        <!-- <picture>
-          <source media="(min-width: 1024px)" srcset="/images/astro-lg.png">
-          <img src="/images/astro-md.png" alt="Header Astro">
-        </picture> -->
+      <div class="scroll-down mt-20">
+        <a href="#about" class="flex flex-col items-center justify-center">
+          <p class="mb-3">Keep Scrolling</p>
+          <fa :icon="['fas','arrow-down']" size="2x" class="animate-bounce"/>
+        </a>
       </div>
     </div>
 
-    <div class="scroll-down my-20 ">
-      <a href="" class="flex flex-col items-center justify-center">
-        <p class="mb-3">Keep Scrolling</p>
-        <fa :icon="['fas','arrow-down']" size="2x" class="animate-bounce"/>
-      </a>
-    </div>
+    
 
-    <div class="about">
+    <div class="about" id="about">
       <img src="/images/about-bg-circle.svg" alt="" class="about-bg-img absolute">
       <img src="/images/balloon.png" alt="" class="about-balloon-img absolute">
       <div class="astro-img">
@@ -72,17 +75,17 @@
         <p>Do you have questions or are you interested in working together, you can visit the links.</p>
         <ul>
           <li class="mr-4">
-            <a href="" target="_blank">
+            <a href="https://www.behance.net/gudofabi" target="_blank">
               <fa :icon="['fab', 'behance-square']" />
             </a>
           </li>
           <li class="mr-4">
-            <a href="" target="_blank">
+            <a href="https://www.linkedin.com/in/gudofabi/" target="_blank">
               <fa :icon="['fab', 'linkedin']" />
             </a>
           </li>
           <li>
-            <a href="" target="_blank">
+            <a href="https://www.pinterest.ph/fabi_ape/_created/" target="_blank">
               <fa :icon="['fab', 'pinterest-square']" />
             </a>
           </li>
@@ -106,49 +109,52 @@ export default {
     @apply font-holiday text-[28px] md:text-4xl mb-6 leading-[1.9];
   }
   .header {
-    @apply relative flex md:items-end md:justify-around 
+    @apply h-[100vh] flex flex-col justify-center items-center;
+
+    .header-container {
+      @apply relative flex md:items-end md:justify-around 
       max-w-[320px] sm:max-w-[570px] md:max-w-[640px] xl:max-w-[920px] w-full mx-auto;
 
-    .header-content {
-      @apply relative w-[505px] h-[370px] flex flex-col justify-center;
+      .header-content {
+        @apply relative w-[505px] h-[370px] flex flex-col justify-center;
 
-      .yellow-brick {
-        @apply absolute w-[172px] md:w-[161px] xl:w-[222px] h-full left-0 top-0 bg-gf-yellow -z-10;
+        .yellow-brick {
+          @apply absolute w-[172px] md:w-[161px] xl:w-[222px] h-full left-0 top-0 bg-gf-yellow -z-10;
 
+        }
+        .content {
+          @apply max-w-[270px] md:max-w-[470px] w-full ml-11;
+
+          h1 {
+            @apply font-holiday text-black text-5xl md:text-[62px] xl:text-[96px] w-full mb-8 tracking-tight;
+          }
+
+          p {
+            @apply leading-6 xl:leading-7 tracking-widest text-sm md:text-base;
+          }
+
+          img {
+            @apply block sm:hidden absolute right-0;
+          }
+
+        }
       }
-      .content {
-        @apply max-w-[270px] md:max-w-[470px] w-full ml-11;
 
-        h1 {
-          @apply font-holiday text-black text-5xl md:text-[62px] xl:text-[96px] w-full mb-8 tracking-tight;
-        }
-
-        p {
-          @apply leading-6 xl:leading-7 tracking-widest text-sm md:text-base;
-        }
+      .header-img {
+        @apply hidden sm:block;
 
         img {
-          @apply block sm:hidden absolute right-0;
+          @apply max-w-[308px] xl:max-w-full;
+
         }
-
       }
     }
-
-    .header-img {
-      @apply hidden sm:block;
-
-      img {
-        @apply max-w-[308px] xl:max-w-full;
-
-      }
-    }
-
   }
 
   .about {
     @apply relative flex flex-col-reverse lg:flex-row 
       max-w-[320px] md:max-w-[800px] xl:max-w-[900px] mx-auto 
-      items-center xl:items-start justify-center xl:justify-between mb-36;
+      items-center xl:items-start justify-center xl:justify-between mb-36 pt-20;
 
     .about-bg-img {
       @apply w-full md:w-[unset] lg:-z-10 bottom-0 lg:left-[13%];
@@ -161,7 +167,7 @@ export default {
       @apply w-full md:w-1/2 z-10;
 
       img {
-        @apply w-[90%];
+        @apply w-[90%] animate-bounce-slow;
       }
 
     }
@@ -196,7 +202,7 @@ export default {
       .card {
         @apply flex items-center bg-white rounded-xl shadow-lg 
           hover:shadow-2xl border-2 border-transparent hover:border-gf-yellow py-5 px-9 transition-all
-          first:mr-8 mb-8 last:m-0 lg:m-0 lg:first:m-0;
+          first:mr-8 mb-8 last:m-0 lg:m-0 lg:first:m-0 cursor-pointer;
 
         .img-cover {
           @apply w-20 h-20 mr-5;

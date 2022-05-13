@@ -1,8 +1,8 @@
 html, body {
-    @apply relative m-0 p-0 font-poppins text-base text-black leading-none;
+    @apply relative m-0 p-0 font-poppins text-base text-black leading-none scroll-smooth transition-all;
 
     .main-wrapper {
-        @apply relative w-full mt-20 mx-0 p-0;
+        @apply relative w-full mx-0 p-0;
     }
 }
 

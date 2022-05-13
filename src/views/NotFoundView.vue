@@ -16,6 +16,8 @@
 
 .not-found {
 
+    @apply h-[100vh] flex items-center justify-center;
+
     .content-container {
         @apply py-10 max-w-[320px] md:max-w-[550px] w-full mx-auto text-center flex flex-col items-center justify-center;
 
