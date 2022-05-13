@@ -202,7 +202,7 @@ export default {
       .card {
         @apply flex items-center bg-white rounded-xl shadow-lg 
           hover:shadow-2xl border-2 border-transparent hover:border-gf-yellow py-5 px-9 transition-all
-          first:mr-8 mb-8 last:m-0 lg:m-0 lg:first:m-0 cursor-pointer;
+          first:mr-0 sm:first:mr-8 mb-8 last:m-0 lg:m-0 lg:first:m-0 cursor-pointer;
 
         .img-cover {
           @apply w-20 h-20 mr-5;
