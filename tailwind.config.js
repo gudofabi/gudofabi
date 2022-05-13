@@ -14,7 +14,8 @@ module.exports = {
         'gf-dark-yellow': '#C67600',
       },
       animation: {
-        'spin-slow': 'spin 100s linear infinite'
+        'spin-slow': 'spin 100s linear infinite',
+        'bounce-slow': 'bounce-slow 3s infinite'
       }
     },
   },

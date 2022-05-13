@@ -18,7 +18,15 @@ const router = createRouter({
       meta: {
         title: `About Me | ${import.meta.env.VITE_APP_TITLE}`
       }
-    }
+    },
+    { 
+      path: '/:pathMatch(.*)*', 
+      name: 'NotFound', 
+      component: () => import('../views/NotFoundView.vue'),
+      meta: {
+        title: `Page Not Found :(`
+      }
+    },
   ],
   scrollBehavior(to) {
     return { top: 0 }
