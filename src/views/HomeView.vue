@@ -20,9 +20,9 @@
         </div>
       </div>
       <div class="scroll-down mt-20">
-        <a href="#about" class="flex flex-col items-center justify-center">
+        <a href="#about" class="flex flex-col items-center justify-center animate-pulse">
           <p class="mb-3">Keep Scrolling</p>
-          <fa :icon="['fas','arrow-down']" size="2x" class="animate-bounce"/>
+          <fa :icon="['fas','arrow-down']" size="2x" class=""/>
         </a>
       </div>
     </div>
