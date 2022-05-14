@@ -97,8 +97,44 @@
 </template>
 
 <script>
-export default {
+import { useHead } from '@vueuse/head'
+import { reactive } from '@vue/reactivity'
 
+export default {
+  setup() {
+    const siteData = reactive({
+      title: `${import.meta.env.VITE_APP_TITLE}`,
+      description: `Frontend developer, teacher, and web junkie.`,
+      url: `${import.meta.env.VITE_APP_URL}`
+    })
+
+    useHead({
+      title: `${siteData.title} | Frontend Developer`,
+      meta: [
+        {
+          name: 'description',
+          content: siteData.description
+        },
+        // Facebook
+        {
+          name: 'og:url',
+          content: siteData.url
+        },
+        {
+          name: 'og:type',
+          content: 'website'
+        },
+        {
+          name: 'og:title',
+          content: `${import.meta.env.VITE_APP_TITLE} | Frontend Developer`,
+        },
+        {
+          name: 'og:description',
+          content: siteData.description
+        },
+      ]
+    })
+  }
 }
 </script>
 

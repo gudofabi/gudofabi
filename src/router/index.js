@@ -7,24 +7,18 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: () => import('../views/HomeView.vue'),
-      meta: {
-        title: `${import.meta.env.VITE_APP_TITLE} | Frontend Developer`
-      }
     },
     {
       path: '/about',
       name: 'about',
       component: () => import('../views/AboutView.vue'),
-      meta: {
-        title: `About Me | ${import.meta.env.VITE_APP_TITLE}`
-      }
     },
     { 
       path: '/:pathMatch(.*)*', 
       name: 'NotFound', 
       component: () => import('../views/NotFoundView.vue'),
       meta: {
-        title: `Page Not Found :(`
+        title: `Page Not Found`
       }
     },
   ],

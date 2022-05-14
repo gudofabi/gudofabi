@@ -1,6 +1,8 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
+import { createHead } from '@vueuse/head'
+
 /** Icons */
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -19,12 +21,18 @@ import router from './router'
 import VueGtag from "vue-gtag";
 
 const app = createApp(App)
+const head = createHead()
 
 app.use(createPinia())
 app.use(router)
+app.use(head)
+
 app.use(VueGtag, {
     config: { id: "UA-120785527-2" }
 })
+
 app.component('fa', FontAwesomeIcon)
 
 app.mount('#app')
+
+
