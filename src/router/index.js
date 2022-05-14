@@ -7,6 +7,9 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: () => import('../views/HomeView.vue'),
+      meta: {
+        title: `${import.meta.env.VITE_APP_TITLE} | Frontend Developer`,
+      }
     },
     {
       path: '/about',

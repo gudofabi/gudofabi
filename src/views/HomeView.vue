@@ -109,7 +109,6 @@ export default {
     })
 
     useHead({
-      title: `${siteData.title} | Frontend Developer`,
       meta: [
         {
           name: 'description',
